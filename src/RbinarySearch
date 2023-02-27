@@ -1,0 +1,30 @@
+public class RbinarySrearch {
+    static   int mid;
+    static  int[]arr={1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,23,24,25,26,45,46,56,57,78};
+    static int recursionBS(int low, int high, int key ){
+        if(low==high){
+            if(key==arr[low]){
+               return low;
+            }else {
+                return -1;
+            }
+        }
+        else {
+            mid = (low+high)/2;
+            if(key==arr[mid]){
+                return mid;
+            }
+            if(key<arr[mid]){
+               return recursionBS(low,mid-1,key);
+            }
+            if(key>arr[mid]){
+                return recursionBS(mid+1,high,key);
+            }
+        }
+        return -1;
+    }
+    public static void main(String[]ss){
+      int index=  recursionBS(0,arr.length,16);
+      System.out.println(index);
+    }
+}
