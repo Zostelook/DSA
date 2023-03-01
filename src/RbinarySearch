@@ -50,29 +50,52 @@ public class RbinarySrearch {
 
 Question NO 4:
 
-public class FindIndexByBinarySearch {
+public class DisplayArrayElementViaRecursion {
 
-    static int findIndexBinarySearch(int[]a,int key){
-        int low =0, high =a.length-1;
-        int mid = low +(high-low)/2;
+    static void display(int[]arr,int index){
 
+        if(index==arr.length){
+            return;
+        }
 
-       while (low<=high){
-
-           if(a[mid]==key){
-               return mid;
-           }if(a[mid]>key){
-               high = mid-1;
-           }else{
-               low = mid+1;
-           }
-       }
-       return -1;
+        System.out.println(arr[index]);
+        display(arr,index+1);
     }
 
     public static void main(String[]ss){
-        int[]arr = {12,13,14,15,16,17,18,67};
-       int index= findIndexBinarySearch(arr,16);
-       System.out.println(index);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+
+        for(int i=0; i<n; i++){
+            arr[i]=sc.nextInt();
+        }
+        display(arr,0);
+    }
+}
+Question No 5: How to print reversr array element by recursion
+
+
+public class DisplayArrayElementViaRecursion {
+
+    static void display(int[]arr,int index){
+
+        if(index==-1){
+            return;
+        }
+
+        System.out.println(arr[index]);
+        display(arr,index-1);
+    }
+
+    public static void main(String[]ss){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[]=new int[n];
+
+        for(int i=0; i<n; i++){
+            arr[i]=sc.nextInt();
+        }
+        display(arr,arr.length-1);
     }
 }
