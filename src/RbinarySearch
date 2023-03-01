@@ -99,3 +99,32 @@ public class DisplayArrayElementViaRecursion {
         display(arr,arr.length-1);
     }
 }
+
+
+Question No 6: How to find maxmum element in Array Element
+
+
+public class FindMaxViaRecursion {
+    static int findMax(int arr[], int index){
+
+        if(index==arr.length-1){
+            return arr[index];
+        }
+
+
+        int max = findMax(arr,index+1);
+        if(max>arr[index]){
+            return max;
+        }else{
+            return arr[index];
+        }
+
+    }
+    public static void main(String[]ss){
+        int[]arr={1,2,3,4,5,6,7,8,9,11,12,78,13,14,15,16,23,24,25,26,45,46,56,57};
+
+      //  int []arr = {0,0,0,0,0,0};
+        int mAX = findMax(arr,0);
+        System.out.println(mAX);
+    }
+}
