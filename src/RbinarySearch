@@ -45,3 +45,34 @@ public class RbinarySrearch {
     
     
     Question No.3 has a doubt on leetcode
+
+
+
+Question NO 4:
+
+public class FindIndexByBinarySearch {
+
+    static int findIndexBinarySearch(int[]a,int key){
+        int low =0, high =a.length-1;
+        int mid = low +(high-low)/2;
+
+
+       while (low<=high){
+
+           if(a[mid]==key){
+               return mid;
+           }if(a[mid]>key){
+               high = mid-1;
+           }else{
+               low = mid+1;
+           }
+       }
+       return -1;
+    }
+
+    public static void main(String[]ss){
+        int[]arr = {12,13,14,15,16,17,18,67};
+       int index= findIndexBinarySearch(arr,16);
+       System.out.println(index);
+    }
+}
