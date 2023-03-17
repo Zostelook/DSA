@@ -1,0 +1,29 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+
+    static int squareRoot(int n){
+     /*   if(n==0){
+            return 0;
+        }else if(n==1){
+            return 1;
+        }*/
+        int ans = -1;
+        for(int i=0; i<=n; i++){
+            if(i*i<=n){
+                ans = (i);
+            }
+        }
+        return ans;
+    }
+    public static void main (String[] args) throws IOException{
+        // Your code here
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+
+       System.out.println(squareRoot(n));
+    }
+}
