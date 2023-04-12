@@ -1,0 +1,50 @@
+public class LinkList
+{
+   static Node head;
+
+   static Node searchNode(Node head, int k){
+        if(head!=null){
+          Node temp = head;
+            while(temp!=null){
+                if(temp.data==k){
+                  return temp;
+                }
+                temp = temp.next;
+            }
+        }
+        return null;
+   }
+
+    public static void main(String[] args) {
+		Node first = new Node(20);           // creating a node
+        Node secoud = new Node(30);
+        Node third = new Node(40);
+        Node fourth = new Node(50);
+
+        head = first;
+
+        first.prev = null;     // connecting nodes
+        first.next = secoud;
+
+        secoud.prev = first;
+        secoud.next = third;
+
+        third.prev = secoud;
+        third.next = fourth;
+
+        fourth.prev = third;
+        fourth.next = null;
+
+       
+	}
+}
+
+class Node{
+    Node prev;
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data = data;
+    }
+}
