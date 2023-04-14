@@ -1,0 +1,61 @@
+public class LinkList
+{
+
+    static int keyPosition(Node head, int key){
+       int pos=1;
+
+       Node temp = head;
+       while(temp!=null){
+        
+           if(temp.data==key){
+               return pos;
+           }else{
+               pos++;
+               temp = temp.next;
+           }
+       }
+       return -1;
+    }
+
+
+
+
+    public static void main(String[] args) {
+		Node head = null;
+
+        Node first = new Node(34);
+        Node secound = new Node(45);
+        Node third = new Node(56);
+        Node fourth = new Node(70);
+
+        first.next = secound;
+        secound.next = third;
+        third.next = fourth;
+
+        head = first;
+
+
+        Node temp = head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+
+        System.out.println();
+
+        System.out.println(keyPosition(head,56));
+
+        
+	}
+}
+
+class Node{
+
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data = data;
+        next = null;
+    }
+}
