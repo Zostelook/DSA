@@ -1,0 +1,21 @@
+import java.util.*;
+public class HashMapsss
+{
+    public static void main(String[] args) {
+		HashMap<String, Integer> map = new HashMap<>();
+
+        map.put("RED", 3);
+        map.put("BLUE", 67);
+        map.put("GREEN", 65);
+        map.put("white",65);
+
+        System.out.println(map);
+
+        if(map.containsKey("RED")){
+            System.out.println("Key is present");
+        }else{
+            System.out.println("Not present");
+        }
+
+	}
+}
