@@ -1,0 +1,37 @@
+public class CircularLinklist
+{
+    public static void main(String[] args) {
+		Node head = null;
+
+        Node first = new Node(20);
+        Node secound = new Node(30);
+        Node third = new Node(40);
+        Node fourth = new Node(50);
+        Node five = new Node(60);
+
+        first.next = secound;
+        secound.next = third;
+        third.next = fourth;
+        fourth.next = five;
+        five.next = first;
+
+        head = first;
+
+        Node temp = head;
+
+        do{
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }while(temp!=head);
+	}
+}
+
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data = data;
+        next = null;
+    }
+}
