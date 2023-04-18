@@ -1,0 +1,54 @@
+public class ReverseSinglyLinkList
+{
+    public static void main(String[] args) {
+		Node head;
+        
+        Node first = new Node(30);
+        Node secound  = new Node(40);
+        Node third = new Node(50);
+        Node fourth = new Node(60);
+
+        head = first;
+        first.next = secound;
+        secound.next = third;
+        third.next = fourth;
+
+        Node temp = head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+
+        // reverse ReverseSinglyLinkList
+        Node cur = head;
+        Node prev = null;
+        Node next = null;
+
+        while(cur!=null){
+            next = cur.next;
+            cur.next = prev;
+
+            prev = cur;
+            cur = next;
+        }
+        head = prev;
+
+        System.out.println();
+        temp = head;
+
+         while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp = temp.next;
+        }
+	}
+}
+
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+        this.data = data;
+        next = null;
+    }
+}
