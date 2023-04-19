@@ -1,0 +1,36 @@
+import java.util.*;
+class Main{
+
+    public static void main(String[]ss){
+        HashSet<Integer> hs = new HashSet<Integer>();
+
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+
+        for(int i=0; i<size; i++){
+            hs.add(sc.nextInt());
+        }
+
+        System.out.println(hs);
+
+
+        HashSet<String> hss = new HashSet<>();
+
+        hss.add("Delhi");
+        hss.add("Pune");
+        hss.add("Agra");
+        hss.add("agra");
+        
+
+        System.out.println(hss);
+
+        System.out.println(hss.contains("Agra"));
+
+        hss.remove("Delhi");
+        System.out.println(hss);
+
+        hss.clear();
+        System.out.println(hss);
+
+    }
+}
