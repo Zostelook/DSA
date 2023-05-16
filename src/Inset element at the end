@@ -1,0 +1,36 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    static void atendInseted(int[]arr, int end){
+        int[]ans = new int[arr.length+1];
+        ans[arr.length] = end;
+
+        for(int i=0; i<arr.length; i++){
+            ans[i] = arr[i];
+        }
+
+        for(int i:ans){
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while(t-->0){
+            int n = sc.nextInt();
+            int[]arr = new int[n];
+            int end = sc.nextInt();
+
+            for(int i=0; i<n; i++){
+                arr[i] = sc.nextInt();
+            }
+            atendInseted(arr, end);
+        }
+    }
+}
