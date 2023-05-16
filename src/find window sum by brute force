@@ -1,0 +1,33 @@
+import java.util.*;
+class Main{
+
+    // this apporach is not proper sliding widow apporach
+
+    static void sumOfEveryWindow(int[]arr, int k){
+       
+        int n = arr.length;
+        for(int i=0; i<=n-k; i++){
+         int sum =0;
+          for(int j=i; j<i+k; j++){
+              sum += arr[j];
+          }
+
+          System.out.print(sum+" ");
+
+        }
+    }
+
+    public static void main(String[]str){
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      int k = sc.nextInt();
+
+      int[]arr = new int[n];
+      
+      for(int i=0; i<n; i++){
+          arr[i] = sc.nextInt();
+      }
+
+      sumOfEveryWindow(arr, k);
+    }
+}
