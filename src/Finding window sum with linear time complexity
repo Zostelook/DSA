@@ -1,0 +1,45 @@
+import java.util.*;
+class Main{
+
+    static void findingSum(int[]arr, int k){
+        int sum =0;
+        int count = 0;
+        int count2 =0;
+        for(int i=0; i<arr.length; i++){
+
+            if(i>=k){
+                sum = sum+arr[i]-arr[i-k];
+                count2++;
+                
+            }else{
+                sum += arr[i];
+                count++;
+            }
+
+            if(count==k){
+                System.out.print(sum+" ");
+                
+                
+            }else if(count == k && count2==1){
+                System.out.print(sum+" ");
+                count2 =0;
+            }
+            
+        }
+    }
+
+    public static void main(String[]ss){
+     
+     Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      int k = sc.nextInt();
+
+      int[]arr = new int[n];
+      
+      for(int i=0; i<n; i++){
+          arr[i] = sc.nextInt();
+      }
+
+      findingSum(arr, k);
+    }
+}
