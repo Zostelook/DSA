@@ -1,0 +1,43 @@
+import java.util.*;
+class Main{
+
+   
+    static int partation(int[]arr, int key){
+        int pivot = key;
+        int pIndex = 0;
+
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]<pivot){
+                swap(arr, i, pIndex);
+                pIndex++;
+            }
+        }
+        return pIndex;
+    }
+
+    // we are going to Design to another method to for this task
+
+    static int countlesserElemnt(int[]arr, int key){
+        int count =0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]<key){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    static void swap(int[]arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    public static void main(String[]ss){
+      int[]arr  = {5,6,2,8,12,45,3,9,11};
+     int ans = partation(arr,10);
+
+     System.out.println(ans);
+
+     System.out.println(countlesserElemnt(arr,10));
+    }
+}
