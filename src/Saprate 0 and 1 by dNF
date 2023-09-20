@@ -1,0 +1,40 @@
+import java.util.*;
+class Main{
+
+    static void dnfSort(int[]arr){
+        int low =0;
+        int high = arr.length-1;
+
+        while(low<=high){
+
+            if(arr[low]==0){
+                low++;
+            }
+            else if(arr[low]==1 && arr[high]==0){
+                swap(low, high,arr);
+            }
+            else{
+                high--;
+            }
+        }
+
+       
+    }
+
+       static void swap(int i, int j , int[]arr){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+   
+
+    public static void main(String[]ss){
+     int[]arr = {0,1,0,1,1,0,1,0,0,0};
+     dnfSort(arr);
+
+     for(int elm:arr){
+         System.out.print(elm+" ");
+     }
+    }
+}
