@@ -1,0 +1,102 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+
+    static int binaryToDecimal(String str){
+        int decimal = 0;
+        int multiplier = 1;
+
+        for(int i = str.length()-1; i>=0; i--){
+            if(str.charAt(i)=='1'){
+                decimal = decimal+multiplier;
+            }
+            multiplier = multiplier*2;
+        }
+        return decimal;
+    }
+    static String reverseString(String str){
+        String strx = "";
+        
+        for(int i=str.length()-1; i>=0; i--){
+            strx = strx+str.charAt(i);
+        }
+        return strx;
+    }
+
+    static String decimalToHexa(int decimal){
+        String hex = "";
+        if(decimal<10){
+            hex = hex+decimal;
+        }
+        else if(decimal==10){
+            hex = hex+'A';
+        }
+        else if(decimal==11){
+            hex = hex+'B';
+        }
+        else if(decimal==12){
+            hex = hex+'C';
+        }
+        else if(decimal==13){
+            hex = hex+'D';
+        }
+        else if(decimal==14){
+            hex = hex+'E';
+        }
+        else if(decimal==15){
+            hex = hex+'F';
+        }
+        return hex;
+    }
+
+    static String hexaDecimal(String mainStr){
+        int count = 0;
+        int decimal = 0;
+        String hexFinal = "";
+        String set = "";
+        String edgeStr = "";
+
+        for(int i= mainStr.length()-1; i>=0; i--){
+            count++;
+            set = set + mainStr.charAt(i);
+
+            if(count==4){
+                set = reverseString(set);
+                decimal = binaryToDecimal(set);
+                hexFinal = hexFinal+decimalToHexa(decimal);
+                
+                count = 0;
+                set = "";
+            }
+        }
+        set = "";
+        if(mainStr.length()%4==1){
+            set = set + mainStr.charAt(0);
+            hexFinal = hexFinal+binaryToDecimal(set);
+        }
+        else if(mainStr.length()%4==2){
+            for(int i=0; i<2; i++){
+                set = set+mainStr.charAt(i);
+            }
+            hexFinal = hexFinal+binaryToDecimal(set);
+        }
+        else if(mainStr.length()%4==3){
+            for(int i=0; i<3; i++){
+                set = set +mainStr.charAt(i);
+            }
+            hexFinal = hexFinal+binaryToDecimal(set);
+        }
+
+        return reverseString(hexFinal);
+    }
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str = sc.next();
+        System.out.println(hexaDecimal(str));
+    }
+}
