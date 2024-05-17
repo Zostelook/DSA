@@ -17,6 +17,7 @@ class Main {
             }else{
                 end = mid-1;
             }
+           int mid = (start+end)/2;
         }
         return false;
     }
